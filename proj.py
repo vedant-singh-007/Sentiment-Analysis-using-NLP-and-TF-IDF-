@@ -30,12 +30,13 @@ def predict_sentiment(x):
     filtered_text = [word for word in tokenized_text if word not in stop_words]
     stemmed_text = [stemmer.stem(word) for word in filtered_text]
     tfidf_review = tf_idf_v.transform([' '.join(stemmed_text)])
-    
-    sentiment_prob = model.predict(tfidf_review)[0][1]  # Probability of positive class
+
+    sentiment_prob = model.predict_proba(tfidf_review)[0][1]  # ✅ Correct method
     if sentiment_prob > 0.6:
         return "positive"
     else:
         return "negative"
+
 
 # Streamlit UI
 st.title('Sentiment Analysis')
