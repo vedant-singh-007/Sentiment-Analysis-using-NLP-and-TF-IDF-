@@ -4,4 +4,4 @@ numpy
 scikit-learn
 nltk
 joblib
-tensorflow
+
