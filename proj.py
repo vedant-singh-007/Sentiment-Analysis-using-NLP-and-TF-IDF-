@@ -12,8 +12,14 @@ model= joblib.load('model.pkl')
 
 import nltk
 
-nltk.download('punkt')
-nltk.download('stopwords')
+@st.cache_data
+def download_nltk():
+    import nltk
+    nltk.download('punkt')
+    nltk.download('stopwords')
+
+download_nltk()
+
 
 # Load model and TF-IDF vectorizer
 
