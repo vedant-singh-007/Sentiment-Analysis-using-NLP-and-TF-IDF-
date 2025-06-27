@@ -6,9 +6,9 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import joblib
-from tensorflow.keras.models import load_model
 
-model = load_model('model.keras')
+
+model= joblib.load('model.pkl')
 
 import nltk
 
